@@ -5,7 +5,7 @@ import AbstractComponent from "../../components/AbstractComponent.tsx";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Icons from "react-native-vector-icons/Ionicons";
 import {useFocusEffect} from "@react-navigation/native";
-import DeleteTable from "./DeleteTable.tsx";
+//import DeleteTable from "./DeleteTable.tsx";
 
 // Define the type for table items
 type TableItem = {

@@ -18,9 +18,9 @@ const CategoryList = ({ data, navigation }: any) => {
 
     const getAPI = async () => {
         try {
-            const response = await fetch('http://192.168.0.105:8888/api/v1/categorys');
+            const response = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
             const data = await response.json();
-            setCategory(data.data);
+            setCategory(data.categories);
         } catch (error) {
             console.log(error);
         } finally {
@@ -63,11 +63,11 @@ const CategoryList = ({ data, navigation }: any) => {
                                     style={styles.category}
                                     onPress={() => Alert.alert('Làm mới lại trang theo Category')}
                                 >
-                                    <Image source={{ uri: item.imageUrl }} style={styles.item} />
-                                    <Text style={styles.title}>{item.name}</Text>
+                                    <Image source={{ uri: item.strCategoryThumb }} style={styles.item} />
+                                    <Text style={styles.title}>{item.strCategory}</Text>
                                 </TouchableOpacity>
                             )}
-                            keyExtractor={(item) => item.id.toString()}
+                            keyExtractor={(item) => item.idCategory.toString()}
                         />
                     )}
                 </View>
@@ -91,22 +91,31 @@ const styles = StyleSheet.create({
     },
     item: {
         overflow: 'hidden',
-        width: 65,
-        height: 65,
+        width: 130,
+        height: 85,
         padding: 10,
     },
     category: {
         alignItems: 'center',
-        marginEnd: 15,
+        justifyContent: 'center',
+        margin: 7,
+        borderWidth: 3,
+        borderColor: 'darkred',
+        borderRadius: 60,
+        width: 200,
+        height: 140,
+        backgroundColor: 'black'
     },
     title: {
-        color: 'black',
-        fontSize: 20,
+        color: 'lime',
+        fontSize: 25,
         paddingTop: 5,
+        fontWeight: 'bold'
     },
     categoryList: {
         flexDirection: 'row',
         justifyContent: 'center'
+        
     },
     flatListContent: {
         justifyContent: 'center',

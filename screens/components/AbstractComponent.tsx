@@ -4,7 +4,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 const AbstractComponent = ({ title, textBTN, onAddPress }: AbstractComponentProps) => {
     return (
         <View style={styles.container}>
-            <Text style={{ color: 'black', fontSize: 20 }}>{title}</Text>
+            <Text style={{ color: 'turquoise', fontSize: 25, fontWeight: 'bold' }}>{title}</Text>
             {textBTN === null ?
                 null :
                 <TouchableOpacity onPress={onAddPress}>

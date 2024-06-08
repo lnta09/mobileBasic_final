@@ -9,6 +9,10 @@ import {NavigationContainer} from "@react-navigation/native";
 import RegisterScreen from "./screens/register/RegisterScreen.tsx";
 import AddProductScreen from "./screens/admin/AddProductScreen.tsx";
 import LoginScreen from "./screens/login/LoginScreen.tsx";
+import DetailScreen from './screens/detail/DetailScreen.tsx';
+import MealOfCateScreen from './screens/detail/MealOfCateScreen.tsx';
+import FavouriteScreen from './screens/detail/favouriteScreen.tsx';
+import TableBooked from './screens/detail/TableBooked.tsx';
 
 /*const Home = ({navigation}: any) => {
     return (
@@ -102,7 +106,7 @@ const App = () => {
                 <Stack.Screen name={"AddCategoryScreen"} component={AddCategoryScreen} options={{headerShown: false}}/>
                 <Stack.Screen name={"AddProductScreen"} component={AddProductScreen} options={{headerShown: false}}/>
                 <Stack.Screen name={"RegisterScreen"} component={RegisterScreen} options={{headerShown: false}}/>
-                <Stack.Screen name={"LoginScreen"} component={LoginScreen} options={{headerShown: false}}/>
+                {/*<Stack.Screen name={"LoginScreen"} component={LoginScreen} options={{headerShown: false}}/>*/}
             </Stack.Navigator>
         </NavigationContainer>
     );

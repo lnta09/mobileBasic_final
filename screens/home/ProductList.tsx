@@ -4,6 +4,7 @@ import {Alert, FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from "
 import Waiting from "../components/Waiting.tsx";
 import AddProductScreen from "../admin/AddProductScreen.tsx";
 
+
 const ProductList = ({navigation}: any) => {
 
     const [products, setProducts] = useState([]);
@@ -11,9 +12,9 @@ const ProductList = ({navigation}: any) => {
 
     const getAPI = async () => {
         try {
-            const response = await fetch('http://192.168.0.105:8888/api/v1/products');
+            const response = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian');
             const data = await response.json();
-            setProducts(data);
+            setProducts(data.meals);
         } catch (error) {
             console.log(error);
         } finally {
@@ -39,9 +40,9 @@ const ProductList = ({navigation}: any) => {
                     columnWrapperStyle={styles.row}
                     data={products}
                     renderItem={({item}) =>
-                        <TouchableOpacity style={styles.item} onPress={() => (Alert.alert("oke"))}>
-                            <Image style={styles.image} source={{uri: item.image}}/>
-                            <Text style={styles.title}>{item.name}</Text>
+                        <TouchableOpacity style={styles.item} onPress={() => (/*Alert.alert("oke")*/handleAddPress)}>
+                            <Image style={styles.image} source={{uri: item.strMealThumb}}/>
+                            <Text style={styles.title}>{item.strMeal}</Text>
                         </TouchableOpacity>
                     }/>
             )}
@@ -57,24 +58,29 @@ const styles = StyleSheet.create({
     },
 
     item: {
-        marginVertical: 15,
+        marginBottom: 40,
         alignItems: "center",
+        backgroundColor: '#262626',
+        borderRadius: 40
     },
 
     image: {
-        width: 200,
-        height: 200,
+        width: 185,
+        height: 180,
         resizeMode: 'cover',
+        margin: 1,
+        borderRadius: 40
     },
 
     title: {
         textAlign: 'center',
-        color: 'black',
-        fontSize: 20,
+        color: 'orangered',
+        fontSize: 22,
+        
     },
     row: {
         flex: 1,
-        justifyContent: "space-between",
+        justifyContent: 'space-around'
     }
 
 });

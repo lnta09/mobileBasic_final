@@ -6,7 +6,7 @@ import ProductList from "./ProductList.tsx";
 import {useFocusEffect} from "@react-navigation/native";
 
 const HomeScreen = ({navigation, route}: any) => {
-    const { userData } = route.params;
+    //const { userData } = route.params;
 
     return (
         <View style={styles.main}>
@@ -15,7 +15,7 @@ const HomeScreen = ({navigation, route}: any) => {
             </View>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View>
-                    <CategoryList data={userData} navigation={navigation}/>
+                    <CategoryList /*data={userData}*/ navigation={navigation}/>
                 </View>
                 <View>
                     <ProductList navigation={navigation}/>
@@ -29,7 +29,7 @@ const HomeScreen = ({navigation, route}: any) => {
 const styles = StyleSheet.create({
     main: {
         flex: 1,
-        backgroundColor: "#FFFFF0",
+        backgroundColor: "black",
         paddingHorizontal: 15,
 
     }

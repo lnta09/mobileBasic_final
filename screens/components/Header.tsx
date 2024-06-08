@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <View style={styles.container}>
             <View>
-                <Text style={styles.title}>nguyentronghau.vn</Text>
+                <Text style={styles.title}>Restaurant</Text>
             </View>
             <View>
                 <Image
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        color: 'red',
+        color: 'orangered',
         fontWeight: 'bold',
         fontSize: 20,
         textTransform: 'uppercase',
